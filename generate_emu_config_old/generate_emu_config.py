@@ -1233,7 +1233,7 @@ def main():
             root_def_dir = os.path.join(get_exe_dir(False), "_DEFAULT")
 
         emu_settings_dir = os.path.join(base_out_dir, "steam_settings")
-        info_out_dir = os.path.join(base_out_dir, "steam_misc\\app_info")
+        info_out_dir = os.path.join(base_out_dir, "steam_misc", "app_info")
 
         print(f"[ ] DEF_DIR = {root_def_dir.replace(user_name, user_repl, 1)}")
         if RELATIVE_DIR and (RELATIVE_set == 'raw'):
@@ -1254,7 +1254,7 @@ def main():
                 while base_dir_path.exists():
                     time.sleep(0.05)
 
-        root_backup_dir = os.path.join(base_out_dir, "steam_misc\\app_backup")
+        root_backup_dir = os.path.join(base_out_dir, "steam_misc", "app_backup")
         #backup_dir = os.path.join(root_backup_dir, f"{appid}")
         backup_dir = root_backup_dir #use different structure for 'backup' dir
 
@@ -1798,12 +1798,12 @@ def main():
                     break
         '''
 
-        if os.path.isdir(os.path.join(base_out_dir, 'steam_misc\\app_backup')):
-            if os.listdir(os.path.join(base_out_dir, 'steam_misc\\app_backup')): # zip 'app_backup' folder only if not empty
-                shutil.make_archive(os.path.join(base_out_dir, 'steam_misc\\app_backup'), 'zip', os.path.join(base_out_dir, 'steam_misc\\app_backup')) # first argument is the name of the zip file
-                shutil.rmtree(os.path.join(base_out_dir, 'steam_misc\\app_backup'))
-                os.makedirs(os.path.join(base_out_dir, 'steam_misc\\app_backup'))
-                shutil.move(os.path.join(base_out_dir, 'steam_misc\\app_backup.zip'), os.path.join(base_out_dir, 'steam_misc\\app_backup\\app_backup.zip'))
+        if os.path.isdir(os.path.join(base_out_dir, 'steam_misc', 'app_backup')):
+            if os.listdir(os.path.join(base_out_dir, 'steam_misc', 'app_backup')): # zip 'app_backup' folder only if not empty
+                shutil.make_archive(os.path.join(base_out_dir, 'steam_misc', 'app_backup'), 'zip', os.path.join(base_out_dir, 'steam_misc', 'app_backup')) # first argument is the name of the zip file
+                shutil.rmtree(os.path.join(base_out_dir, 'steam_misc', 'app_backup'))
+                os.makedirs(os.path.join(base_out_dir, 'steam_misc', 'app_backup'))
+                shutil.move(os.path.join(base_out_dir, 'steam_misc', 'app_backup.zip'), os.path.join(base_out_dir, 'steam_misc', 'app_backup', 'app_backup.zip'))
 
         if DOWNLOAD_COMMON_IMAGES:
             app_images.download_app_images(
