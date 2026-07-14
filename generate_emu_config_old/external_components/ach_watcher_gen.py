@@ -177,7 +177,7 @@ def generate_all_ach_watcher_schemas(
         with open(out_schema_file, "wt", encoding='utf-8') as f:
             json.dump(out_schema, f, ensure_ascii=False, indent=2)
 
-    shutil.make_archive(os.path.join(base_out_dir, "steam_misc\\extra_acw"), 'zip', os.path.join(base_out_dir, "steam_misc\\extra_acw")) # first argument is the name of the zip file
-    shutil.rmtree(os.path.join(base_out_dir, "steam_misc\\extra_acw"))
-    os.makedirs(os.path.join(base_out_dir, "steam_misc\\extra_acw"))
-    shutil.move(os.path.join(base_out_dir, 'steam_misc\\extra_acw.zip'), os.path.join(base_out_dir, "steam_misc\\extra_acw\\extra_acw.zip"))
+    shutil.make_archive(os.path.join(base_out_dir, "steam_misc", "extra_acw"), 'zip', os.path.join(base_out_dir, "steam_misc", "extra_acw")) # first argument is the name of the zip file
+    shutil.rmtree(os.path.join(base_out_dir, "steam_misc", "extra_acw"))
+    os.makedirs(os.path.join(base_out_dir, "steam_misc", "extra_acw"))
+    shutil.move(os.path.join(base_out_dir, 'steam_misc', 'extra_acw.zip'), os.path.join(base_out_dir, "steam_misc", "extra_acw", "extra_acw.zip"))
